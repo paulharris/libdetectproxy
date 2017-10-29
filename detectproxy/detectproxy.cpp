@@ -11,6 +11,8 @@ std::string detectproxy(std::string const& url, std::ostream * log)
 
 #else
 
+// ensure we don't bring in stuff we don't need
+#define WIN32_LEAN_AND_MEAN
 #include <windows.h>
 #include <winhttp.h>
 
