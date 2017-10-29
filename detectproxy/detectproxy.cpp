@@ -369,7 +369,7 @@ string detectproxy( string const& target_url, ostream * log )
 
       if (!ie_proxy_config.autoconfig_url.empty())
       {
-         VERBOSE_LOG("Trying PAC detection");
+         VERBOSE_LOG("Trying PAC detection, URL: " << ie_proxy_config.autoconfig_url);
          //////// First: PAC autodetect /////////
 
          WINHTTP_AUTOPROXY_OPTIONS options = {0};
