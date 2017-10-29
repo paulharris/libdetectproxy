@@ -409,7 +409,11 @@ string detectproxy( string const& target_url, ostream * log )
    VERBOSE_LOG("Final proxy list: " + proxy_config.proxy_list);
    VERBOSE_LOG("Final bypass list: " + proxy_config.bypass_list);
 
+   string result = proxy_config.proxy_list.substr(0, proxy_config.proxy_list.find(';'));
+   VERBOSE_LOG("Final result - this is primitive, just use the first item in the proxy list");
+   VERBOSE_LOG(result);
+
    // just get the first item... TODO this is very naive.
-   return proxy_config.proxy_list.substr(0, proxy_config.proxy_list.find(';'));
+   return result;
 }
 #endif
